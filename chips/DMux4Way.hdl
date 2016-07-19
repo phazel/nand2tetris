@@ -1,0 +1,9 @@
+CHIP DMux4Way {
+  IN sel[2], in;
+  OUT a, b, c, d;
+
+  PARTS:
+  DMux(sel=sel[1], in=in, a=aOrB, b=cOrD);
+  DMux(sel=sel[0], in=aOrB, a=a, b=b);
+  DMux(sel=sel[0], in=cOrD, a=c, b=d);
+}
